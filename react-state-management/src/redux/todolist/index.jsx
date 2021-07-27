@@ -1,25 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux' //ini useDispatch dan useSelector dari react-redux
+import { ADD, DEL, LOAD, addTodo, delTodo } from './action'
 
-//Actions Constant
-const ADD = "ADD_TODO"
-const DEL = "DELETE_TODO"
-const LOAD = "LOAD_TODO"
-const UPDATE = "UPDATE_TODO"
-
-//Actions
-const addTodo = (todo) => ({
-  type: ADD,
-  payload: {
-    id: Math.random().toString(),
-    todo: todo
-  }
-})
-
-const delTodo = (id) => ({
-  type: DEL,
-  payload:id
-})
 
 const upTodo = (todo) => ({
   type: UPDATE,
