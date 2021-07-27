@@ -2,6 +2,12 @@ import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux' //ini useDispatch dan useSelector dari react-redux
 import { ADD, DEL, LOAD, addTodo, delTodo } from './action'
 
+
+const upTodo = (todo) => ({
+  type: UPDATE,
+  payload: 
+})
+
 //initial stata /kondisi awal -> ketika object di load pertama kali
 const initState = {
   todos: []
@@ -39,6 +45,10 @@ export default function TodoList() {
   const dispatch = useDispatch()
   const listTodos = useSelector(state => state.todos.todos)
   console.log(listTodos)
+
+  useEffect(() => {
+    upTodo()
+  }, [])
 
   const submit = (e) => {
     e.preventDefault()
